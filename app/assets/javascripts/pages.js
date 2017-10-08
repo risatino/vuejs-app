@@ -34,14 +34,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (this.newReview != '') { 
           this.reviews.push(this.newReview);
           this.newReview = '';
-        },
-        isPositive: function(inputReview) {
-          return inputReview.indexOf('stupid') === -1;
         }
+        // isPositive: function(inputReview) {
+        //   return inputReview.indexOf('stupid') === -1;
+        // }
+      },
       completeReview: function(inputReview) {
         var index = this.reviews.indexOf(inputReview);
         this.reviews.splice(inputReview, 1);
-      }
+        }
       },
       addTask: function() {
         if (this.newTask.length > 0) {
@@ -53,6 +54,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var index = this.tasks.indexOf(inputTask);
         this.tasks.splice(inputTask, 1);
       }
-    }
   });
 });

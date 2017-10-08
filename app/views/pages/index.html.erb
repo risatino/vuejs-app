@@ -9,12 +9,12 @@
     <%# @reviews.each do |review| %>
       <!-- <li><%#= review %></li> -->
     <%# end %> 
-        <div v-for="review in reviews" v-on:click="completeReview(review)" v-if="isPositive.text">
+        <div v-for="review in reviews" v-on:click="completeReview(review)">
           <h3><em>"{{ review.text }}"</em></h3>
           <h5>Rating: {{ review.rating }}</h5>
           <h5>Reviewer: {{ review.reviewer }}</h5>
-        </div>
         <br>
+        </div>
         <div>
           <input type="text" v-model="newReview">
           <button v-on:click="addReview()">Add Review</button>
