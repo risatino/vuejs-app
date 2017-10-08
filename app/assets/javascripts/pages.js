@@ -19,10 +19,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     methods: {
       addReview: function() {
-        this.reviews.push(this.newReview);
+        if (this.newReview != '') { 
+          this.reviews.push(this.newReview);
+          this.newReview = '';
+        }
       },
       addTask: function() {
-        this.tasks.push(this.newTask);
+        if (this.newTask.length > 0) {
+          this.tasks.push(this.newTask);
+          this.newTask = '';
+        }
       }
     }
   });
