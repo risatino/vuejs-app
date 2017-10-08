@@ -7,6 +7,12 @@
   </div>
   <h2>Reviews</h2>
   <ul>
-    
+    <!--erb/rails data is held in the database. see sample: 
+    <%# @reviews.each do |review| %>
+      <li><%#= review %></li>
+    <%# end %> -->
+    <li v-for="review in reviews">{{ review }}</li>
   </ul>
+  <!-- vue.js model: where the data is held // when data is updated in real time = two way binding-->
+  <input type="text" v-model="message">
 </div>
