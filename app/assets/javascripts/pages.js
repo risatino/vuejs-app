@@ -8,11 +8,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 "I miss Rails.",
                 "Have you heard the latest Django Reinhardt jamz?"
                 ],
-      newReview: ''
+      newReview: '',
+      tasks: [
+              "take out the trash",
+              "sweep the front walk",
+              "buy noosa yoghurt",
+              "do a happy python dance"
+      ],
+      newTask: ''
     },
     methods: {
       addReview: function() {
         this.reviews.push(this.newReview);
+      },
+      addTask: function() {
+        this.tasks.push(this.newTask);
       }
     }
   });
