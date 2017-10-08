@@ -10,7 +10,7 @@
       <!-- <li><%#= review %></li> -->
     <%# end %> 
         <div>
-          <li v-for="review in reviews">{{ review }}</li>
+          <li v-for="review in reviews" v-on:click="completeReview(review)">{{ review }}</li>
         </div>
         <br>
         <div>
@@ -22,7 +22,7 @@
     <h2>To-Do List</h2>
       <ul>
         <div>
-          <li v-for="task in tasks">{{ task }}</li>
+          <li v-for="task in tasks" v-on:click="completeTask(task)">{{ task }}</li>
         </div>
         <br>
         <div>

@@ -22,13 +22,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (this.newReview != '') { 
           this.reviews.push(this.newReview);
           this.newReview = '';
-        }
+        },
+      completeReview: function(inputReview) {
+        var index = this.reviews.indexOf(inputReview);
+        this.reviews.splice(inputReview, 1);
+      }
       },
       addTask: function() {
         if (this.newTask.length > 0) {
           this.tasks.push(this.newTask);
           this.newTask = '';
         }
+      },
+      completeTask: function(inputTask) {
+        var index = this.tasks.indexOf(inputTask);
+        this.tasks.splice(inputTask, 1);
       }
     }
   });
