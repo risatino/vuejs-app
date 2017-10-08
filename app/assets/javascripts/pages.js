@@ -4,9 +4,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       message: 'Hello, Pink Martians!',
       reviews: [
-                "How was your trip to planet Earthe?",
-                "I miss Rails.",
-                "Have you heard the latest Django Reinhardt jamz?"
+                { 
+                  text: "How was your trip to planet Earthe?",
+                  rating: 5,
+                  reviewer: "Jamz"  
+                },
+                { 
+                  text: "I miss Rails.",
+                  rating: 8,
+                  reviewer: "Jewels"
+                },
+                { 
+                  text: "Have you heard the latest Django Reinhardt jamz?",
+                  rating: 3,
+                  reviewer: "Jimbo"
+                }
                 ],
       newReview: '',
       tasks: [

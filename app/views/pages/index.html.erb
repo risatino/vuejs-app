@@ -9,8 +9,10 @@
     <%# @reviews.each do |review| %>
       <!-- <li><%#= review %></li> -->
     <%# end %> 
-        <div>
-          <li v-for="review in reviews" v-on:click="completeReview(review)" v-if="isPositive">{{ review }}</li>
+        <div v-for="review in reviews" v-on:click="completeReview(review)" v-if="isPositive.text">
+          <h3><em>"{{ review.text }}"</em></h3>
+          <h5>Rating: {{ review.rating }}</h5>
+          <h5>Reviewer: {{ review.reviewer }}</h5>
         </div>
         <br>
         <div>
