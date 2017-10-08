@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           this.reviews.push(this.newReview);
           this.newReview = '';
         },
+        isPositive: function(inputReview) {
+          return inputReview.indexOf('stupid') === -1;
+        }
       completeReview: function(inputReview) {
         var index = this.reviews.indexOf(inputReview);
         this.reviews.splice(inputReview, 1);

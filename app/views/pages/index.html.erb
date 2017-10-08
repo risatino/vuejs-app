@@ -10,7 +10,7 @@
       <!-- <li><%#= review %></li> -->
     <%# end %> 
         <div>
-          <li v-for="review in reviews" v-on:click="completeReview(review)">{{ review }}</li>
+          <li v-for="review in reviews" v-on:click="completeReview(review)" v-if="isPositive">{{ review }}</li>
         </div>
         <br>
         <div>
