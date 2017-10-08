@@ -7,7 +7,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 "How was your trip to planet Earthe?",
                 "I miss Rails.",
                 "Have you heard the latest Django Reinhardt jamz?"
-                ]
+                ],
+      newReview: ''
+    },
+    methods: {
+      addReview: function() {
+        this.reviews.push(this.newReview);
+      }
     }
   });
 });
