@@ -1,15 +1,14 @@
 <div id="app">
-  <div>{{ message }}
+  <!-- <div>{{ message }} -->
 <!-- vue.js model: where the data is held // when data is updated in real time = two way binding-->
-    <input type="text" v-model="message">
-  </div>
+    <!-- <input type="text" v-model="message"> -->
+  <!-- </div> -->
     <h2>Reviews</h2>
-      <ul>
 <!--erb/rails data is held in the database. see sample: -->
-    <% @reviews.each do |review| %>
-      <li><%= review %></li>
-    <% end %> 
-        <div v-for="review in reviews" v-on:click="completeReview(review)">
+    <%# @reviews.each do |review| %>
+      <!-- <li><%#= review %></li> -->
+    <%# end %> 
+        <div v-for="review in reviews" v-if="isPositive(review.text)">
           <h3><em>"{{ review.text }}"</em></h3>
           <h5>Rating: {{ review.rating }}</h5>
           <h5>Reviewer: {{ review.reviewer }}</h5>
@@ -20,7 +19,6 @@
           <button v-on:click="addReview()">Add Review</button>
         </div>
         <br>
-      </ul>
     <h2>To-Do List</h2>
       <ul>
         <div>

@@ -31,13 +31,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     methods: {
       addReview: function() {
-        if (this.newReview != '') { 
           this.reviews.push(this.newReview);
           this.newReview = '';
+        },
+        isPositive: function(inputReview) {
+          return inputReview.indexOf('stupid') === -1;
         }
-        // isPositive: function(inputReview) {
-        //   return inputReview.indexOf('stupid') === -1;
-        // }
       },
       completeReview: function(inputReview) {
         var index = this.reviews.indexOf(inputReview);
