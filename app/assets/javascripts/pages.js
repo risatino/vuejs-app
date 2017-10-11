@@ -20,7 +20,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
                   reviewer: "Jimbo"
                 }
                 ],
-      newReview: '',
+      newReviewText: '',
+      newReviewRating: '',
+      newReviewReviewer: ''
+
       tasks: [
               "take out the trash",
               "sweep the front walk",
@@ -30,17 +33,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
       newTask: ''
     },
     methods: {
-      addReview: function() {
-          this.reviews.push(this.newReview);
-          this.newReview = '';
+        addReview: function() {
+          if (this.newReviewText !== '' && this.newReviewRating !== '' && this.newReviewReviewer !== ''){
+            var reviewObj = {
+                            text: this.newReviewText,
+                            rating: this.newReviewRating,
+                            reviewer: this.newReviewReviewer
+                            };
+            this.reviews.push(reviewObj);
+            
+            this.newReviewText = '';
+            this.newReviewRating = '';
+            this.newReviewReviewer = '';
+          }
         },
         isPositive: function(inputReview) {
           return inputReview.indexOf('stupid') === -1;
         }
       },
-      completeReview: function(inputReview) {
-        var index = this.reviews.indexOf(inputReview);
-        this.reviews.splice(inputReview, 1);
+        completeReview: function(inputReview) {
+          var index = this.reviews.indexOf(inputReview);
+          this.reviews.splice(inputReview, 1);
         }
       },
       addTask: function() {
